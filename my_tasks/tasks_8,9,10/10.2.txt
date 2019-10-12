@@ -1,0 +1,16 @@
+﻿При помощи базы данных Redis решите задачу поиска имени пользователя по электронному адресу и наоборот, поиск электронного адреса пользователя по его имени.
+
+redis 127.0.0.1:6379> HMSET AlekseyIvanov:alexey@corp.ru user_name AlekseyIvanov email alexey@corp.ru
+OK
+redis 127.0.0.1:6379> HMSET YuliyaSviridova:ula@list.ru user_name YuliyaSviridova email ula@list.ru
+OK
+redis 127.0.0.1:6379> HMSET NikolaySverdlov:nikolay_s@altdesign.ru user_name NikolaySverdlov email nikolay_s@altdesign.ru
+OK
+redis 127.0.0.1:6379> KEYS *:alexey@corp.ru
+1) "AlekseyIvanov:alexey@corp.ru"
+
+redis 127.0.0.1:6379> KEYS *:ula@list.ru
+1) "YuliyaSviridova:ula@list.ru"
+
+redis 127.0.0.1:6379> KEYS NikolaySverdlov*
+1) "NikolaySverdlov:nikolay_s@altdesign.ru"

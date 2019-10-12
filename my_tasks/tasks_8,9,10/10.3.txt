@@ -1,0 +1,10 @@
+﻿Организуйте хранение категорий и товарных позиций учебной базы данных shop в СУБД MongoDB.
+
+db.shop.insertMany([
+   { model: "AMD FX-8320", category: "Processors", price: "100",
+      tags: [ "tag1", "tag2" ] },
+   { item: "MSI B250M GAMING PRO", category: "MotherBoards", price: "150",
+     tags: [ "tag1", "tag3" ] },
+   { item: "ASUS ROG MAXIMUS X HERO", category: "MotherBoards", price: "135",
+     tags: [ "red", "blank", "plain" ] }
+]);
